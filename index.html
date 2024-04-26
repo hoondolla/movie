@@ -20,37 +20,29 @@
       Movie Collection
 
     </h1>
-
-    <div class="title_btn">
-
-      <button class="mainbtn"> MAIN </button>
-      <button class="mainbtn"> INFO </button>
-      <button class="mainbtn"> Q/A </button>
-
-    </div>
-
-
+    
     <hr width="100%" color="white" noshade />
 
     <div class="search">
-      <p style="color: black"> 영화 검색 <input class="input" type="text" placeholder="영화 제목을 검색하세요!"> <button type="submit"
-          class="mybtn"> 검색 </button> </p>
+      <p style="color: black"> 영화 검색 <input class="input" type="text" id="search-input" aria-describedby="search-button"
+          placeholder="영화 제목을 검색하세요!"> <button class="mybtn" id="search-button"> 검색
+        </button> </p>
     </div>
 
     <div id="list_wrap">
-      <ul>
-        <li class="item">
-          <img src="" class="card-image">
-          <div class="cont">
-            <strong class="card-title">분노의 질주 : 라이드 오어 다이</strong>
-            <p></p>
-              <p style="color: chartreuse;"></p>
-          </div>
-        </li>
-      </ul>
-    </div>
 
-    <script src="movie.js"></script>
+      
+        <!-- <li class="item" id="itemcard">
+          <img src=${image} class="card-image">
+          <div class="cont">
+            <strong class="card-title" id ="card-title">${movietitle}</strong>
+            <p>${overview}</p>
+            <p style="color: chartreuse;">grade : ${vote_average}</p>
+          </div>
+        </li> -->
+      
+   </ul>
+      <script src="movie.js"></script>
 </body>
 
 </html>
