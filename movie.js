@@ -6,13 +6,13 @@ const options = {
   }
 };
 
-fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options)
+fetch('https://api.themoviedb.org/3/tv/top_rated?language=ko-KR&page=1', options)
   .then(response => response.json())
   .then(response => {                           // fetch 불러온거 (API)              
     let movie_list = response.results; // 불러온 데이터를 변수에 할당해준다
     let temp_html = ``; // temp_html 을 아무런 값도 없이 초기화 한다
     movie_list.forEach(doc => {          // 데이터 불러온걸 순회해서 변수들에 넣어준다
-      let movietitle = doc['name'].replace(' ','-');  // raplace (' ' , '-') id 의 띄어쓰기는 읽지 않음, 그래서 id 의 띄어쓰기를 - (하이픈) 으로 바꾸면 되지 않을까~ 해서 replace 를 사용했음
+      let movietitle = doc['name'].replaceAll(' ','-');  // raplace (' ' , '-') id 의 띄어쓰기는 읽지 않음, 그래서 id 의 띄어쓰기를 - (하이픈) 으로 바꾸면 되지 않을까~ 해서 replace 를 사용했음
       //The Attack of Titan -> The-Attack-of-Titan
       let overview = doc['overview']; //데이터에 변수 지정
       let image = 'https://image.tmdb.org/t/p/w500' + doc['poster_path']; //데이터에 변수 지정
@@ -29,7 +29,7 @@ fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options
         <li class="item" id=${movietitle} movie-id="${card_id}"> 
           <img src=${image} class="card-image">
           <div class="cont">
-            <strong class="card-title">${movietitle}</strong>
+            <strong class="card-title">${doc['name']}</strong>
             <p >${overview}</p>
             <p style="color: chartreuse;">grade : ${vote_average}</p>
           </div>

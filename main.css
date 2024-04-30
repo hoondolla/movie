@@ -1,6 +1,7 @@
 body {
-    background-color: white;
+    background-color: black;
 }
+
 
 .title {
     width: 100%;
@@ -54,7 +55,7 @@ ul, li {
 
 #list_wrap {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 #list_wrap ul {
@@ -64,17 +65,17 @@ ul, li {
 
 
 #list_wrap .item {
-    width: 300px;
-    height: 450px;
+    width: 250px;
+    height: 350px;
 
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 40px;
-    padding-bottom: 410px;
+    padding-bottom: 210px;
     
     margin: 20px;
     margin-bottom: 20px;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-right: 25px;
 
 
@@ -95,6 +96,7 @@ ul, li {
 
 #list_wrap .item .cont {
     text-align: center;
+
 }
 
 #list_wrap .item strong {
@@ -106,6 +108,13 @@ ul, li {
 #list_wrap .item p {
     font-size: 14px;
     color: white;
+
+    display: -webkit-box; 
+    -webkit-box-orient:vertical; 
+    -webkit-line-clamp:6; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: normal;
 }
 
 
